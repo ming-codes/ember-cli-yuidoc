@@ -3,7 +3,8 @@
 module.exports = function(environment/* , appConfig */) {
   const ENV = {
     modulePrefix: 'ember-cli-yuidoc',
-    environment
+    environment,
+    rootURL: '/'
   }
 
   return ENV;
