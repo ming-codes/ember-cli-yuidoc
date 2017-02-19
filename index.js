@@ -10,7 +10,7 @@ module.exports = {
   postprocessTree: function(type, workingTree) {
     if(type === 'all') {
       var env = this.app.env;
-      var config = optsGenerator.load();
+      var config = optsGenerator.load(this.project.root);
 
       if((this.liveDocsEnabled && env === 'development') ||
        (config.options && config.options.enabledEnvironments && config.options.enabledEnvironments.indexOf(env) !== -1)) {
