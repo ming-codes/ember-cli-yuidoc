@@ -4,7 +4,9 @@ var YuidocCompiler = require('./lib/broccoli-yuidoc');
 var optsGenerator  = require('./lib/options');
 var mergeTrees     = require('broccoli-merge-trees');
 
-module.exports = {
+var EngineAddon    = require('ember-engines/lib/engine-addon');
+
+module.exports = EngineAddon.extend({
   name: 'ember-cli-yuidoc',
 
   postprocessTree: function(type, workingTree) {
@@ -35,4 +37,4 @@ module.exports = {
     var yuidocTree = new YuidocCompiler(config.paths, config);
     return mergeTrees([inputTree, yuidocTree], { overwrite: true });
   }
-};
+});
